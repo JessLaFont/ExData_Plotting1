@@ -10,6 +10,7 @@ GAP <- as.numeric(Focus$Global_active_power)
 Date <- as.Date(Focus$Date, format = "%d/%m/%Y")
 ### 4. Create New Variable(s)
 DateTime <- paste(Date, Focus$Time, sep = " ")
+DateTime <- strftime(DateTime, format = "%Y/%m/%d %H:%M:%S")
 DateTime <- strptime(DateTime, format = "%Y/%m/%d %H:%M:%S")
 ### 5. Create Plot
 png("plot2.png", width = 480, height = 480)
